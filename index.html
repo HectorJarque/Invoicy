@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invoicy — Gestión de facturas sin complicaciones</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500&display=swap"
+        rel="stylesheet">
+</head>
+<body>
+
+<nav id="mainNav">
+  <a href="#" class="nav-logo">invoicy<span>.</span></a>
+  <ul class="nav-center">
+    <li><a href="#features">Funciones</a></li>
+    <li><a href="#how">Cómo funciona</a></li>
+    <li><a href="#pricing">Precios</a></li>
+    <li><a href="#reviews">Opiniones</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="btn-login">Iniciar sesión</button>
+    <button class="btn-cta-nav">Empezar gratis</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-badge">
+    <div class="badge-dot"></div>
+    Nuevo: envío automático de recordatorios de cobro
+  </div>
+  <h1 class="hero-title">
+    Factura más rápido.<br>
+    Cobra <span class="highlight">sin perseguir</span> a nadie.
+  </h1>
+  <p class="hero-sub">
+    Invoicy es la herramienta que usan autónomos y pequeñas empresas para crear facturas profesionales, hacer
+    seguimiento de pagos y tener la contabilidad bajo control. Sin complicaciones.
+  </p>
+  <div class="hero-actions">
+    <button class="btn-hero-primary" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'})">
+      Empezar gratis
+      <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+      </svg>
+    </button>
+    <button class="btn-hero-secondary" onclick="document.getElementById('how').scrollIntoView({behavior:'smooth'})">
+      Ver cómo funciona
+    </button>
+  </div>
+  <p class="hero-note">Sin tarjeta de crédito. <span>Gratis los primeros 14 días.</span></p>
+
+  <!-- Dashboard preview -->
+  <div class="dashboard-wrap">
+    <div class="dashboard-glow"></div>
+    <div class="dashboard">
+      <div class="dash-bar">
+        <div class="dash-dot r"></div>
+        <div class="dash-dot y"></div>
+        <div class="dash-dot g"></div>
+        <div class="dash-url">app.invoicy.es/dashboard</div>
+      </div>
+      <div class="dash-body">
+        <div class="dash-sidebar">
+          <div class="dash-logo">invoicy<span>.</span></div>
+          <div class="dash-nav-item active">
+            <div class="dash-nav-dot"></div>
+            Panel
+          </div>
+          <div class="dash-nav-item">Facturas</div>
+          <div class="dash-nav-item">Clientes</div>
+          <div class="dash-nav-item">Presupuestos</div>
+          <div class="dash-nav-item">Gastos</div>
+          <div class="dash-nav-item">Informes</div>
+          <div class="dash-nav-item">Configuración</div>
+        </div>
+        <div class="dash-main">
+          <div class="dash-header">
+            <span class="dash-title">Panel de control</span>
+            <button class="dash-btn">+ Nueva factura</button>
+          </div>
+          <div class="kpi-row">
+            <div class="kpi">
+              <div class="kpi-label">Ingresos del mes</div>
+              <div class="kpi-value">12.480 €</div>
+              <div class="kpi-delta">+18.2% vs mes anterior</div>
+            </div>
+            <div class="kpi">
+              <div class="kpi-label">Pendiente de cobro</div>
+              <div class="kpi-value">3.200 €</div>
+              <div class="kpi-delta down">4 facturas</div>
+            </div>
+            <div class="kpi">
+              <div class="kpi-label">Tasa de cobro</div>
+              <div class="kpi-value">94%</div>
+              <div class="kpi-delta">Muy buena</div>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <div class="table-head">
+              <span>Cliente</span>
+              <span>Importe</span>
+              <span>Fecha</span>
+              <span>Estado</span>
+            </div>
+            <div class="table-row" id="skel-1">
+              <span class="table-client">Agencia Mediana S.L.</span>
+              <span class="table-amount">2.400,00 €</span>
+              <span class="table-date">12 may 2025</span>
+              <span class="status-badge status-paid">Cobrada</span>
+            </div>
+            <div class="table-row">
+              <span class="table-client">Retail Concept</span>
+              <span class="table-amount">780,00 €</span>
+              <span class="table-date">10 may 2025</span>
+              <span class="status-badge status-sent">Enviada</span>
+            </div>
+            <div class="table-row">
+              <span class="table-client">Estudio Navarro</span>
+              <span class="table-amount">1.200,00 €</span>
+              <span class="table-date">05 may 2025</span>
+              <span class="status-badge status-pending">Vencida</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOGOS -->
+<div id="logos">
+  <div class="logos-label">Confían en Invoicy más de 4.800 negocios</div>
+  <div class="logos-row">
+    <div class="logo-item">Artesanía</div>
+    <div class="logo-item">Pixel Studio</div>
+    <div class="logo-item">Koala Legal</div>
+    <div class="logo-item">Taller Maro</div>
+    <div class="logo-item">Vanta Soft</div>
+    <div class="logo-item">Cuaderno</div>
+    <div class="logo-item">Faro Labs</div>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<section id="features">
+  <div class="container" style="max-width:1100px;margin:0 auto">
+    <div class="reveal">
+      <div class="section-tag">Por qué Invoicy</div>
+      <h2 class="section-title">Todo lo que necesitas,<br>nada de lo que no.</h2>
+      <p class="section-sub">Diseñado para que puedas crear una factura en menos de un minuto y dedicar el tiempo a lo
+        que realmente importa.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feat-card reveal">
+        <div class="feat-icon">
+          <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+          </svg>
+        </div>
+        <div class="feat-title">Facturas en un minuto</div>
+        <div class="feat-desc">Crea facturas profesionales desde plantillas listas para usar. Añade tu logo, tus datos y
+          listo. El PDF se genera automáticamente.
+        </div>
+      </div>
+      <div class="feat-card reveal d1">
+        <div class="feat-icon">
+          <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/>
+          </svg>
+        </div>
+        <div class="feat-title">Recordatorios automáticos</div>
+        <div class="feat-desc">Configura recordatorios de pago y olvídate de perseguir a los clientes. Invoicy lo hace
+          por ti de forma discreta y profesional.
+        </div>
+      </div>
+      <div class="feat-card reveal d2">
+        <div class="feat-icon">
+          <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+          </svg>
+        </div>
+        <div class="feat-title">Informes claros</div>
+        <div class="feat-desc">Ve exactamente cuánto has facturado, qué está pendiente de cobro y cómo evoluciona tu
+          negocio. Sin necesidad de abrir Excel.
+        </div>
+      </div>
+      <div class="feat-card reveal">
+        <div class="feat-icon">
+          <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
+          </svg>
+        </div>
+        <div class="feat-title">Gestión de clientes</div>
+        <div class="feat-desc">Guarda los datos de tus clientes una vez y reutilízalos en todas las facturas. Historial
+          completo de pagos por cliente.
+        </div>
+      </div>
+      <div class="feat-card reveal d1">
+        <div class="feat-icon">
+          <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+          </svg>
+        </div>
+        <div class="feat-title">Seguro y conforme a la ley</div>
+        <div class="feat-desc">Cumple con la normativa española y europea. Numeración correlativa automática,
+          conservación de facturas durante 5 años.
+        </div>
+      </div>
+      <div class="feat-card reveal d2">
+        <div class="feat-icon">
+          <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+          </svg>
+        </div>
+        <div class="feat-title">Funciona en cualquier sitio</div>
+        <div class="feat-desc">Accede desde el ordenador, el móvil o la tablet. Todo sincronizado en tiempo real. Sin
+          instalaciones ni actualizaciones manuales.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="container" style="max-width:1100px;margin:0 auto">
+    <div class="reveal">
+      <div class="section-tag">Cómo funciona</div>
+      <h2 class="section-title">De cero a primera factura<br>en cinco minutos.</h2>
+    </div>
+    <div class="how-grid" style="margin-top:4rem">
+      <div class="steps reveal">
+        <div class="step active" onclick="setStep(this,0)">
+          <div class="step-num">1</div>
+          <div class="step-info">
+            <div class="step-title">Crea tu cuenta</div>
+            <div class="step-desc">Solo necesitas un email. Sin tarjeta, sin formularios interminables. En dos minutos
+              ya estás dentro.
+            </div>
+          </div>
+        </div>
+        <div class="step" onclick="setStep(this,1)">
+          <div class="step-num">2</div>
+          <div class="step-info">
+            <div class="step-title">Añade tus datos fiscales</div>
+            <div class="step-desc">Tu nombre o razón social, NIF y dirección. Invoicy los coloca automáticamente en
+              todas tus facturas.
+            </div>
+          </div>
+        </div>
+        <div class="step" onclick="setStep(this,2)">
+          <div class="step-num">3</div>
+          <div class="step-info">
+            <div class="step-title">Crea y envía tu factura</div>
+            <div class="step-desc">Selecciona el cliente, añade las líneas de concepto e importes. Envía por email
+              directamente desde Invoicy.
+            </div>
+          </div>
+        </div>
+        <div class="step" onclick="setStep(this,3)">
+          <div class="step-num">4</div>
+          <div class="step-info">
+            <div class="step-title">Cobra y controla</div>
+            <div class="step-desc">Marca las facturas como cobradas, recibe recordatorios automáticos y lleva el control
+              de tu tesorería en tiempo real.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="how-visual reveal d2">
+        <div class="how-visual-tab">
+          <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+          </svg>
+          Factura #2025-0042
+        </div>
+        <div class="how-visual-body">
+          <div class="invoice-preview">
+            <div class="inv-header">
+              <div>
+                <div class="inv-company">Tu Negocio S.L.</div>
+                <div class="inv-detail">NIF: B-12345678<br>Calle Mayor, 10 · Madrid<br>hola@tunegocio.es</div>
+              </div>
+              <div style="text-align:right">
+                <div class="inv-num">#2025-0042</div>
+                <div class="inv-detail" style="text-align:right">Emitida: 19 may 2025<br>Vence: 19 jun 2025</div>
+              </div>
+            </div>
+            <table class="inv-table">
+              <thead>
+              <tr>
+                <th>Concepto</th>
+                <th style="text-align:right">Uds.</th>
+                <th style="text-align:right">Precio</th>
+                <th style="text-align:right">Total</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td>Diseño web — Proyecto Marzo</td>
+                <td style="text-align:right;color:var(--text3)">1</td>
+                <td style="text-align:right">1.800,00 €</td>
+                <td style="text-align:right">1.800,00 €</td>
+              </tr>
+              <tr>
+                <td>Mantenimiento mensual</td>
+                <td style="text-align:right;color:var(--text3)">3</td>
+                <td style="text-align:right">150,00 €</td>
+                <td style="text-align:right">450,00 €</td>
+              </tr>
+              </tbody>
+            </table>
+            <div class="inv-total">
+              <div class="inv-total-label">IVA (21%): 472,50 € · Base: 2.250,00 €</div>
+              <div class="inv-total-value">2.722,50 €</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="container" style="max-width:960px;margin:0 auto">
+    <div class="reveal">
+      <div class="section-tag">Precios</div>
+      <h2 class="section-title">Transparente desde el principio.</h2>
+      <p class="section-sub" style="margin:0 auto 3rem">Sin comisiones escondidas. Sin letras pequeñas. Cancela cuando
+        quieras.</p>
+    </div>
+    <div style="text-align:center" class="reveal">
+      <div class="pricing-toggle">
+        <button class="toggle-btn active" id="toggleMonthly" onclick="setPricing('monthly')">Mensual</button>
+        <button class="toggle-btn" id="toggleYearly" onclick="setPricing('yearly')">Anual
+          <span class="toggle-save">-20%</span></button>
+      </div>
+    </div>
+    <div class="pricing-grid reveal">
+      <div class="plan-card">
+        <div class="plan-name">Starter</div>
+        <div class="plan-price" id="price-starter"><sup>€</sup>0</div>
+        <div class="plan-period">Para siempre</div>
+        <div class="plan-desc">Para quienes están empezando y quieren probar sin comprometerse con nada.</div>
+        <ul class="plan-features">
+          <li>
+            <div class="check">✓</div>
+            Hasta 5 facturas al mes
+          </li>
+          <li>
+            <div class="check">✓</div>
+            1 cliente
+          </li>
+          <li>
+            <div class="check">✓</div>
+            PDF básico
+          </li>
+          <li class="disabled">
+            <div class="check">–</div>
+            Recordatorios automáticos
+          </li>
+          <li class="disabled">
+            <div class="check">–</div>
+            Informes y estadísticas
+          </li>
+        </ul>
+        <button class="btn-plan btn-plan-outline" onclick="alert('Redirigiendo al registro...')">Empezar gratis</button>
+      </div>
+      <div class="plan-card popular">
+        <div class="popular-badge">El más elegido</div>
+        <div class="plan-name">Pro</div>
+        <div class="plan-price" id="price-pro"><sup>€</sup><span id="price-pro-val">12</span></div>
+        <div class="plan-period" id="price-pro-period">al mes</div>
+        <div class="plan-desc">Para autónomos y freelances que quieren trabajar de forma más profesional.</div>
+        <ul class="plan-features">
+          <li>
+            <div class="check">✓</div>
+            Facturas ilimitadas
+          </li>
+          <li>
+            <div class="check">✓</div>
+            Clientes ilimitados
+          </li>
+          <li>
+            <div class="check">✓</div>
+            Recordatorios automáticos
+          </li>
+          <li>
+            <div class="check">✓</div>
+            Informes y estadísticas
+          </li>
+          <li>
+            <div class="check">✓</div>
+            Logo personalizado
+          </li>
+        </ul>
+        <button class="btn-plan btn-plan-primary" onclick="alert('Redirigiendo al registro...')">Empezar 14 días
+          gratis
+        </button>
+      </div>
+      <div class="plan-card">
+        <div class="plan-name">Equipo</div>
+        <div class="plan-price" id="price-team"><sup>€</sup><span id="price-team-val">29</span></div>
+        <div class="plan-period" id="price-team-period">al mes</div>
+        <div class="plan-desc">Para pequeñas empresas con varios miembros del equipo y más volumen.</div>
+        <ul class="plan-features">
+          <li>
+            <div class="check">✓</div>
+            Todo lo del plan Pro
+          </li>
+          <li>
+            <div class="check">✓</div>
+            Hasta 5 usuarios
+          </li>
+          <li>
+            <div class="check">✓</div>
+            Multiempresa
+          </li>
+          <li>
+            <div class="check">✓</div>
+            Exportación contable
+          </li>
+          <li>
+            <div class="check">✓</div>
+            Soporte prioritario
+          </li>
+        </ul>
+        <button class="btn-plan btn-plan-outline" onclick="alert('Redirigiendo al registro...')">Empezar 14 días
+          gratis
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews">
+  <div class="container" style="max-width:1100px;margin:0 auto">
+    <div class="reveal">
+      <div class="section-tag">Opiniones reales</div>
+      <h2 class="section-title">Lo que dicen los que ya lo usan.</h2>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card reveal">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Antes tardaba una hora en hacer cada factura con Word. Ahora lo hago en dos minutos. No
+          exagero.</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">AP</div>
+          <div>
+            <div class="reviewer-name">Ana Prieto</div>
+            <div class="reviewer-role">Diseñadora freelance, Barcelona</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card reveal d1">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Los recordatorios automáticos me han salvado la vida. Mis clientes ahora pagan a tiempo
+          sin que yo tenga que decir nada.</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">MG</div>
+          <div>
+            <div class="reviewer-name">Marcos García</div>
+            <div class="reviewer-role">Consultor independiente, Madrid</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card reveal d2">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Llevaba años buscando algo así. Simple, rápido y que cumpla con la ley española. Invoicy
+          es exactamente eso.</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">LR</div>
+          <div>
+            <div class="reviewer-name">Laura Ruiz</div>
+            <div class="reviewer-role">Propietaria de taller, Valencia</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="reveal">
+    <div class="section-tag" style="display:block;margin-bottom:1rem">Preguntas frecuentes</div>
+    <h2 class="section-title">Lo que más nos preguntan.</h2>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        ¿Hace falta saber de contabilidad para usar Invoicy?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">No, para nada. Invoicy está pensado para personas que no son contables. Creas la factura,
+        eliges el tipo de IVA correspondiente y el sistema calcula todo solo. Si tienes dudas sobre algo concreto, el
+        soporte está para ayudarte.
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        ¿Mis facturas cumplen con la normativa española?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">Sí. Las facturas generadas por Invoicy incluyen todos los campos obligatorios según la
+        normativa española: número correlativo, fecha, datos fiscales del emisor y receptor, base imponible, tipo de IVA
+        y cuota. También son compatibles con los requisitos de la futura ley de facturación electrónica.
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        ¿Puedo cambiar de plan cuando quiera?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">Sí, puedes subir o bajar de plan en cualquier momento desde tu cuenta. Si bajas de plan, el
+        cambio se aplica al inicio del siguiente período de facturación. No hay penalizaciones ni compromisos de
+        permanencia.
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        ¿Qué pasa con mis facturas si cancelo?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">Si cancelas, siempre puedes exportar todas tus facturas en PDF antes de hacerlo. Tus datos no
+        desaparecen de golpe: tienes un período de gracia de 30 días para descargar todo lo que necesites.
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        ¿Funciona para empresas, no solo autónomos?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">Sí. El plan Equipo está pensado para pequeñas empresas con varios usuarios. Puedes gestionar
+        múltiples empresas desde una misma cuenta, asignar roles al equipo y llevar la facturación de forma
+        centralizada.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section id="cta-final">
+  <div class="cta-card reveal">
+    <h2>Empieza hoy.<br>Factura mañana.</h2>
+    <p>Sin tarjeta de crédito. Sin letra pequeña. 14 días de prueba completa del plan Pro, gratis.</p>
+    <div class="cta-btns">
+      <button class="btn-hero-primary" onclick="alert('Creando tu cuenta...')">
+        Crear cuenta gratis
+        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </button>
+      <button class="btn-hero-secondary"
+              onclick="document.getElementById('reviews').scrollIntoView({behavior:'smooth'})">Leer opiniones
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand-name">invoicy<span>.</span></div>
+      <p class="footer-desc">La herramienta de facturación para autónomos y pequeñas empresas que prefieren hacer las
+        cosas sin complicaciones.</p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Producto</div>
+      <ul>
+        <li><a href="#features">Funciones</a></li>
+        <li><a href="#pricing">Precios</a></li>
+        <li><a href="#">Actualizaciones</a></li>
+        <li><a href="#">API pública</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Empresa</div>
+      <ul>
+        <li><a href="#">Sobre nosotros</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Prensa</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Legal</div>
+      <ul>
+        <li><a href="#">Privacidad</a></li>
+        <li><a href="#">Términos de uso</a></li>
+        <li><a href="#">Cookies</a></li>
+        <li><a href="#">Aviso legal</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Kallik — Todos los derechos reservaods</span>
+    <span>Héctor Jarque</span>
+  </div>
+</footer>
+<script src="./js/app.js"></script>
+</body>
+</html>
