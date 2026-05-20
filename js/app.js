@@ -1,19 +1,21 @@
-// NAV
-window.addEventListener('scroll', () => {
+  window.addEventListener('scroll', function () {
   document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 40);
 });
 
-// REVEAL
-const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) e.target.classList.add('visible');
-  });
-}, {threshold: 0.08, rootMargin: '0px 0px -40px 0px'});
-document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  function setStep(el, i) {
+  document.querySelectorAll('.step').forEach(function (s) { s.classList.remove('active'); });
+  el.classList.add('active');
+}
 
-// PRICING TOGGLE
-function setPricing(mode) {
-  const monthly = mode === 'monthly';
+  function toggleFaq(btn) {
+  var item = btn.closest('.faq-item');
+  var isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(function (i) { i.classList.remove('open'); });
+  if (!isOpen) item.classList.add('open');
+}
+
+  function setPricing(mode) {
+  var monthly = mode === 'monthly';
   document.getElementById('toggleMonthly').classList.toggle('active', monthly);
   document.getElementById('toggleYearly').classList.toggle('active', !monthly);
   document.getElementById('price-pro-val').textContent = monthly ? '12' : '10';
@@ -22,16 +24,23 @@ function setPricing(mode) {
   document.getElementById('price-team-period').textContent = monthly ? 'al mes' : 'al mes (facturado anualmente)';
 }
 
-// HOW STEPS
-function setStep(el, i) {
-  document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
-  el.classList.add('active');
+  var toastTimer;
+  var toast = document.getElementById('toast');
+
+  function showToast(message) {
+  if (toastTimer) clearTimeout(toastTimer);
+  toast.textContent = message;
+  toast.classList.add('visible');
+  toastTimer = setTimeout(function () {
+  toast.classList.remove('visible');
+}, 3000);
 }
 
-// FAQ
-function toggleFaq(btn) {
-  const item = btn.closest('.faq-item');
-  const isOpen = item.classList.contains('open');
-  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-  if (!isOpen) item.classList.add('open');
+  document.addEventListener('click', function (e) {
+  var target = e.target.closest('[data-toast]');
+  if (target) {
+  e.preventDefault();
+  showToast(target.getAttribute('data-toast'));
 }
+});
+  lucide.createIcons();
